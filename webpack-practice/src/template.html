@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpack Practice</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Webpack Practice</h1>
+    </div>
+    <table>
+      <caption>
+        List of Webpack packages to install
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col" >
+            Asset type
+          </th>
+          <th scope="col">
+            npm Command / Config
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="first-col">
+          <td rowspan="3" class="package-for">Webpack</td>
+          <td class="group-name">
+            <pre>
+            <code>
+npm init -y
+npm install --save-dev webpack webpack-cli</code>
+          </td>
+        </tr>
+        <tr>
+          <td class="group-name">
+            <strong>Webpack Config:</strong>
+            <pre>
+      <code>
+// webpack.config.js
+const path = require("path");
+
+module.exports = {
+    mode: "development",
+    entry: "./src/index.js",
+    output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+    },
+};</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td class="group-name">
+            <strong>Run webpack:</strong>
+            <pre>
+      <code>
+npx webpack</code>
+    </pre>
+          </td>
+        </tr>
+        <tr class="first-col">
+            <td rowspan="2" class="package-for">HTML</td>
+            <td class="group-name">
+              <pre>
+              <code>
+npm install --save-dev html-webpack-plugin</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="group-name">
+              <strong>Webpack Config:</strong>
+              <pre>
+        <code>
+// webpack.config.js
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+    mode: "development",
+    entry: "./src/index.js",
+    output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+    },
+    plugins: [
+    new HtmlWebpackPlugin({
+        template: "./src/template.html",
+    }),
+    ],
+};            
+        </code>
+    </pre>
+            </td>
+          </tr>
+          <tr class="first-col">
+            <td rowspan="2" class="package-for">CSS</td>
+            <td class="group-name">
+              <pre>
+              <code>
+npm install --save-dev style-loader css-loader</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="group-name">
+              <strong>Webpack Config:</strong>
+              <pre>
+        <code>
+// webpack.config.js
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+    mode: "development",
+    entry: "./src/index.js",
+    output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+    },
+    plugins: [
+    new HtmlWebpackPlugin({
+        template: "./src/template.html",
+    }),
+    ],
+    module: {
+    rules: [
+        {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+        },
+    ],
+    },
+};</code>
+    </pre>
+            </td>
+          </tr>
+          <tr class="first-col">
+            <td rowspan="2" class="package-for">Images</td>
+            <td class="group-name">
+              <pre>
+              <code>
+npm install --save-dev html-loader</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="group-name">
+              <p>Add the following objects to the <code>module.rules</code> array within <code>webpack.config.js</code>:</p>
+              <strong>Webpack Config:</strong>
+              <pre>
+        <code>
+//webpack.config.js
+{
+  test: /\.html$/i,
+  loader: "html-loader",
+},
+{
+  test: /\.(png|svg|jpg|jpeg|gif)$/i,
+  type: "asset/resource",
+}</code>
+    </pre>
+            </td>
+          </tr>
+          <tr class="first-col">
+            <td rowspan="3" class="package-for">Webpack-dev-server</td>
+            <td class="group-name">
+              <pre>
+              <code>
+npm install --save-dev webpack-dev-server
+              </code>
+            </td>
+          </tr>
+          <tr>
+            <td class="group-name">
+              <p>Enables running <code>npx webpack</code> in the background.We add a source map by setting <code>eval-source-map</code> as a devtool option. If we don’t do this, any error messages we get won’t necessarily match up to the correct files and line numbers from our development code. Secondly, by default, webpack-dev-server will only auto-restart when it detects any changes to files we import into our JavaScript bundle, so our HTML template will be ignored!</p>
+              <strong>Webpack Config:</strong>
+              <pre>
+        <code>
+// webpack.config.js
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
+  devtool: "eval-source-map",
+  devServer: {
+    watchFiles: ["./src/template.html"],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/template.html",
+    }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
+    ],
+  },
+};</code>
+    </pre>
+            </td>
+          </tr>
+          <tr>
+            <td class="group-name">
+              <strong>Run webpack-dev-server:</strong>
+              <pre>
+        <code>
+npx webpack serve</code>
+      </pre>
+            </td>
+          </tr>
+          <tr class="first-col">
+            <td rowspan="2" class="package-for">Fonts</td>
+            <td class="group-name">
+              <pre>
+              <code>
+npm install --save-dev style-loader css-loader</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="group-name">
+              <strong>Webpack Config:</strong>
+              <pre>
+        <code>
+// webpack.config.js add to module.rules property
+{
+  test: /\.(woff|woff2|eot|ttf|otf)$/i,
+  type: 'asset/resource',
+},</code>
+    </pre>
+            </td>
+          </tr>
+
+          <tr class="first-col">
+            <td rowspan="2" class="package-for">Data (JSON, CSVs, TSVs and XML)</td>
+            <td class="group-name">
+              <pre>
+              <code>
+npm install --save-dev csv-loader xml-loader</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="group-name">
+              <strong>Webpack Config:</strong>
+              <pre>
+        <code>
+// webpack.config.js add to module.rules property
+{
+  test: /\.(csv|tsv)$/i,
+  use: ['csv-loader'],
+},
+{
+  test: /\.xml$/i,
+  use: ['xml-loader'],
+},</code>
+    </pre>
+            </td>
+          </tr>
+
+
+          <tr class="first-col">
+            <td rowspan="2" class="package-for">Customize parser of JSON modules</td>
+            <td class="group-name">
+              <pre>
+              <code>
+npm install toml yamljs json5 --save-dev</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="group-name">
+              <strong>Webpack Config:</strong>
+              <pre>
+        <code>
+// webpack.config.js 
+const toml = require('toml');
+const yaml = require('yamljs');
+const json5 = require('json5');
+
+// add to module.rules property
+{
+  test: /\.toml$/i,
+  type: 'json',
+  parser: {
+    parse: toml.parse,
+  },
+},
+{
+  test: /\.yaml$/i,
+  type: 'json',
+  parser: {
+    parse: yaml.parse,
+  },
+},
+{
+  test: /\.json5$/i,
+  type: 'json',
+  parser: {
+    parse: json5.parse,
+  },
+},</code>
+    </pre>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

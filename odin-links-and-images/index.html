@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Links and Images</title>
+
+    </head>
+    <body>
+        <!--
+        
+        <script>
+            console.log("Hello World!")
+        </script>
+        -->
+        <script src="javascript.js"></script>
+        <h1>Homepage</h1>
+        <!-- the anchor element <a> is used to create link in html, without the
+            use of attribute, only plain text is displayed
+            use attribute (name-value pair) within opening tag :
+            href (hypertext reference) - assign your resource (link to webpage or any resource on the internet)
+            target (where to open linked resource) - 
+            a._self: to open link in same tab
+            b. _blank: to open in new tab 
+            rel (relation between current page and linked resource, provides privacy/security) - 
+            a. noopener: prevents new tab's JS from accessing the original page, ensuring security
+            b. noreferrer: prevents new page/tab from knowing where the user came from (hiding the referrer)-->
+        <a href="https://www.theodinproject.com/about" target="_blank">About the Odin Project</a>
+        <a href="./pages/about.html">About</a>
+        <p></p>
+        <!-- img is a void element i.e. no closing tag, contains attributes:
+         1. src (source) - absolute or relative path to image
+         2. alt (alternative text) - describes what the image (used with screen readers for visually impared users)
+         --- Image size attributes, good practice to add always for an image ----
+         3. height - height of the image
+         4. width - width of the image-->
+        <img src="https://www.theodinproject.com/mstile-310x310.png" alt="The Odin Project Logo" height ="310" width="'310">
+        <p></p>
+        <img src="./images/dog.jpg" height="350" width="350">
+    </body>
+</html>

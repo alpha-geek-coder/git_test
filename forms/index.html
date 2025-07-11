@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        font: 1em sans-serif;
+        max-width: 320px;
+      }
+
+      p > label {
+        display: block;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      textarea,
+      fieldset {
+        width: 100%;
+        border: 1px solid #333;
+        box-sizing: border-box;
+      }
+
+      input:invalid {
+        box-shadow: 0 0 5px 1px red;
+      }
+
+      input:focus:invalid {
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Form control elements inside container</h2>
+    <form action="https://httpbin.org/post" method="post">
+      <fieldset>
+        <legend>Personal Details</legend>
+        <div>
+          <label for="first_name">First Name:</label>
+          <input type="text" id="first_name" placeholder="John" focused />
+        </div>
+        <div>
+          <label for="last_name">Last Name:</label>
+          <input type="text" id="last_name" placeholder="Doe" />
+        </div>
+        <div>
+          <label for="age">Age:</label>
+          <input type="number" id="age" min="18" max="99" step="2" />
+        </div>
+        <div>
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Contact Details</legend>
+        <div>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+            multiple
+          />
+        </div>
+        <div>
+          <label for="user_password">Password:</label>
+          <input type="password" id="user_password" placeholder="password" />
+        </div>
+
+        <div>
+          <input
+            type="image"
+            alt="Click me!"
+            src="lasagna.jpg"
+            width="60"
+            height="60"
+          />
+        </div>
+        <div>
+          <input type="file" name="file" id="file" accept="image/*" multiple />
+        </div>
+
+        <div>
+          <label for="search">Enter a search term:</label
+          ><input type="text" type-search="" id="search" name="search" />
+        </div>
+        <div>
+          <label for="tele">Enter a telephone number:</label
+          ><input type="tel" id="tele" name="telephone" />
+        </div>
+        <div>
+          <label for="url">Enter a URL:</label
+          ><input type="url" id="url" name="url" />
+        </div>
+        <div>
+          <label for="price">Choose a maximum house price: </label>
+          <input
+            type="range"
+            name="price"
+            id="price"
+            min="50000"
+            max="500000"
+            step="1000"
+            value="150000"
+          />
+          <output class="price-output" for="price"></output>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Car Details</legend>
+        <div>
+          <label for="car-list">Cars:</label>
+          <select name="Car" id="car-list">
+            <optgroup label="Premium">
+              <option value="car-1">Car 1</option>
+              <option value="car-2">Car 2</option>
+              <option value="car-3">Car 3</option>
+            </optgroup>
+            <optgroup label="Regular">
+              <option value="car-4">Car 4</option>
+              <option value="car-5">Car 5</option>
+              <option value="car-6">Car 6</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Car Type</legend>
+          <div>
+            <input type="radio" id="car-type-1" name="car-type" value="SUV" />
+            <label for="car-type-1">SUV</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="car-type-2"
+              name="car-type"
+              value="Sedan"
+              required
+            />
+            <label for="car-type-2">Sedan</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="car-type-3"
+              name="car-type"
+              value="MinVan"
+            />
+            <label for="car-type-3">MinVan</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Car Model</legend>
+          <div>
+            <input
+              type="checkbox"
+              id="checkbox-1"
+              name="car-models"
+              value="1"
+            />
+            <label for="checkbox-1">Model-1</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="checkbox-2"
+              name="car-models"
+              value="2"
+            />
+            <label for="checkbox-2">Model-2</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="checkbox-3"
+              name="car-models"
+              value="3"
+              checked
+            />
+            <label for="checkbox-3">Model-3</label>
+          </div>
+        </fieldset>
+      </fieldset>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+    <h2>Form control elements outside form container</h2>
+    <fieldset>
+      <div>
+        <label for="name">Whats your name?</label>
+        <input type="text" id="name" value="default" />
+      </div>
+      <button type="greet">Greet Me</button>
+      <p></p>
+      <textarea rows="20" cols="60" placeholder="sfg"></textarea>
+    </fieldset>
+    <h2>Basic Form</h2>
+    <form action="">
+      <ul>
+        <li>
+          <label for="user">User ID</label><input type="text" id="user" />
+        </li>
+        <li>
+          <label for="pwd">Password</label><input type="password" id="pwd" />
+        </li>
+        <li><button type="submit">Log in</button></li>
+      </ul>
+    </form>
+    <h2>Simple Validations</h2>
+    <form>
+      <fieldset>
+        <legend>
+          Do you have a driver's license?<span aria-label="required">*</span>
+        </legend>
+        <input type="radio" required name="driver" id="r1" value="yes" /><label
+          for="r1"
+          >Yes</label
+        >
+        <input type="radio" required name="driver" id="r2" value="no" /><label
+          for="r2"
+          >No</label
+        >
+      </fieldset>
+      <p>
+        <label for="n1">How old are you?</label>
+        <input type="number" min="12" max="120" step="1" id="n1" name="age" />
+      </p>
+      <p>
+        <label for="t1"
+          >What's your favorite fruit?<span aria-label="required"
+            >*</span
+          ></label
+        >
+        <input
+          type="text"
+          id="t1"
+          name="fruit"
+          list="l1"
+          required
+          pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range"
+        />
+        <datalist id="l1">
+          <option>Banana</option>
+          <option>Cherry</option>
+          <option>Apple</option>
+          <option>Strawberry</option>
+          <option>Lemon</option>
+          <option>Orange</option>
+        </datalist>
+      </p>
+      <p>
+        <label for="mail">What's your email address?</label>
+        <input type="email" id="mail" name="mail" />
+      </p>
+      <p>
+        <label for="t3">Leave a short message</label>
+        <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+      </p>
+      <p>
+        <button>Submit</button>
+      </p>
+    </form>
+
+    <script>
+      document.getElementById("age").addEventListener("keypress", function (e) {
+        // Prevent 'e' and 'E' from being typed
+        const invalidInputs = ["e", "E", "+", "-", "."];
+        if (invalidInputs.includes(e.key)) {
+          e.preventDefault();
+        }
+      });
+      const email = document.querySelector("#email");
+      email.addEventListener("input", (event) => {
+        if (email.validity.typeMismatch) {
+            email.setCustomValidity("I am expecting an email address");
+        } else {
+            email.setCustomValidity("");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+.container {
+  display: grid;
+  /* grid-template-columns: 50px 50px;
+    grid-template-rows: 50px 50px; */
+  /* short-hand property */
+  /* grid-template: 50px 50px / 50px 50px; rows / cols */
+  /* grid-auto-rows: 50px; */
+  /* grid-auto-flow: column;
+    grid-auto-columns: 100px; */
+  /* column-gap: 50px;
+    row-gap: 50px; */
+  gap: 10px;
+  grid-template-columns: [left] 1fr [middle1] 1fr [middle2] 1fr [right];
+}
+
+.container > div {
+  border: 1px solid blue;
+}
+
+.item-4 {
+  background: orange;
+  grid-column: left/ right;
+}
+
+.container2 {
+  display: inline-grid;
+  grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
+  background-color: lightblue;
+}
+.room {
+  border: 1px solid;
+  font-size: 50%;
+  text-align: center;
+}
+
+#living-room {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+#bathroom {
+    grid-row-start: 3;
+    grid-row-end: 6;
+    grid-column: 3/ 4;
+}
+
+#bedroom{
+    grid-row-start: 3;
+    grid-row-end:5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#closet{
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-column-end:3;
+}
+
+#kitchen {
+    grid-row: 3 / 6;
+    grid-column: 4 / 6;
+}
+
+.container2 {
+    display: inline-grid;
+    grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
+    background-color: lightblue; 
+    grid-template-areas:
+      "living-room living-room living-room living-room living-room"
+      "living-room living-room living-room living-room living-room"
+      "bedroom bedroom bathroom kitchen kitchen"
+      "bedroom bedroom bathroom kitchen kitchen"
+      "closet closet . . ."    
+  }
+  
+  .room {
+    border: 1px solid;
+    font-size: 50%;
+    text-align: center;
+  }
+  
+  #living-room1 {
+     grid-area:  living-room;
+  }
+  
+  #kitchen1 {
+    grid-area: kitchen;
+  }
+  
+  #bedroom1 {
+    grid-area: bedroom;
+  }
+  
+  #bathroom1 {
+    grid-area: bathroom;
+  }
+  
+  #closet1 {
+    grid-area: closet;
+  }
+
+
+  .grid-container {
+    resize: both;
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid grey;
+    background-color: skyblue;
+    /* grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 2fr) repeat(3, 1fr); */
+    grid-template-rows: repeat(2, min(200px, 50%));
+    /* grid-template-columns: repeat(5, max(120px, 15%)); */
+    /* grid-template-columns: repeat(5, minmax(150px, 200px)); */
+    grid-template-columns: repeat(5, clamp(150px, 20%, 200px));
+  }
+  
+  .grid-item {
+    background-color: #444;
+    text-align: center;
+    color: #ddd;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    padding: 12px;
+  }
+  
+  p {
+    margin: 12px auto 24px;
+  }
+  
+  img {
+    height: 60px;
+  }
+  

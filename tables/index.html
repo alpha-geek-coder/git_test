@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table</title>
+    <link rel="stylesheet" href="./minimal-table.css" type="text/css">
+</head>
+<body>
+    <h1>Table Template</h1>
+    <table>
+        <tr>
+            <td>Hi, I'm your first cell.</td>
+            <td>Hi, I'm your 2nd cell.</td>
+            <td>Hi, I'm your 3rd cell.</td>
+            <td>Hi, I'm your 4th cell.</td>
+        </tr>
+        <tr>
+            <td>Second row, 1st cell.</td>
+            <td>Second row, 2nd cell.</td>
+            <td>Second row, 3rd cell.</td>
+            <td>Second row, 4th cell.</td>
+        </tr>
+    </table>
+    <h1>Dogs Table</h1>
+
+    <table>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Knocky</th>
+        <th>Flor</th>
+        <th>Ella</th>
+        <th>Juan</th>
+      </tr>
+      <tr>
+        <td>Breed</td>
+        <td>Jack Russell</td>
+        <td>Poodle</td>
+        <td>Streetdog</td>
+        <td>Cocker Spaniel</td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td>16</td>
+        <td>9</td>
+        <td>10</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Owner</td>
+        <td>Mother-in-law</td>
+        <td>Me</td>
+        <td>Me</td>
+        <td>Sister-in-law</td>
+      </tr>
+      <tr>
+        <td>Eating Habits</td>
+        <td>Eats everyone's leftovers</td>
+        <td>Nibbles at food</td>
+        <td>Hearty eater</td>
+        <td>Will eat till he explodes</td>
+      </tr>
+    </table>
+
+    <h1>Animals Table</h1>
+    <table>
+        <tr>
+          <th colspan="2">Animals</th>
+        </tr>
+        <tr>
+          <th colspan="2">Hippopotamus</th>
+        </tr>
+        <tr>
+          <th rowspan="2">Horse</th>
+          <td>Mare</td>
+        </tr>
+        <tr>
+          <td>Stallion</td>
+        </tr>
+        <tr>
+          <th colspan="2">Crocodile</th>
+        </tr>
+        <tr>
+          <th rowspan="2">Chicken</th>
+          <td>Hen</td>
+        </tr>
+        <tr>
+          <td>Rooster</td>
+        </tr>
+      </table>
+      <h1>School timetable</h1>
+      <table>
+        <caption>Weekly Timetable</caption>
+        <colgroup>
+            <col span="2">
+            <col style="background-color:#97DB9A;">
+            <col style="width:100px;">
+            <col style="background-color:#97DB9A;">
+            <col style="background-color:#DCC48E; border:4px solid #C1437A;">
+            <col span="2" style="width:100px;">
+          </colgroup>
+          <tr>
+            <td>&nbsp;</td>
+            <th>Mon</th>
+            <th>Tues</th>
+            <th>Wed</th>
+            <th>Thurs</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+          </tr>
+          <tr>
+            <th>1st period</th>
+            <td>English</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <th>2nd period</th>
+            <td>English</td>
+            <td>English</td>
+            <td>&nbsp;</td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <th>3rd period</th>
+            <td>&nbsp;</td>
+            <td>German</td>
+            <td>&nbsp;</td>
+            <td>German</td>
+            <td>Dutch</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <th>4th period</th>
+            <td>&nbsp;</td>
+            <td>English</td>
+            <td>&nbsp;</td>
+            <td>English</td>
+            <td>Dutch</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+      </table>
+      <h1>My spending record</h1>
+
+      <table>
+        <caption>How I chose to spend my money</caption>
+
+          <thead>
+              <tr>
+                <th scope="col">Purchase</th>
+                <th scope="col">Location</th>
+                <th scope="col">Date</th>
+                <th scope="col">Evaluation</th>
+                <th scope="col">Cost (€)</th>
+              </tr>
+          </thead>
+          <tfoot>
+              <tr>
+                <td colspan="4">SUM</td>
+                <td>118</td>
+              </tr>
+          </tfoot>
+
+          <tbody>
+              <tr>
+                <td scope="row">Haircut</td>
+                <td>Hairdresser</td>
+                <td>12/09</td>
+                <td>Great idea</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td scope="row">Lasagna</td>
+                <td>Restaurant</td>
+                <td>12/09</td>
+                <td>Regrets</td>
+                <td>18</td>
+              </tr>
+              <tr>
+                <td scope="row">Shoes</td>
+                <td>Shoeshop</td>
+                <td>13/09</td>
+                <td>Big regrets</td>
+                <td>65</td>
+              </tr>
+              <tr>
+                <td scope="row">Toothpaste</td>
+                <td>Supermarket</td>
+                <td>13/09</td>
+                <td>Good</td>
+                <td>5</td>
+              </tr>
+          </tbody>
+    </table>
+    <h1>Items sold summary</h1>
+
+    <table>
+      <caption>Items Sold August 2016</caption>
+      <thead>
+        <tr>
+          <td colspan="2" rowspan="2"></td>
+          <th colspan="3" id="clothes">Clothes</th>
+          <th colspan="2" id="accessories">Accessories</th>
+        </tr>
+        <tr>
+          <th id="trousers" headers="clothes">Trousers</th>
+          <th id="skirts headers="clothes"">Skirts</th>
+          <th id="dresses" headers="clothes">Dresses</th>
+          <th id="bracelets" headers="accessories">Bracelets</th>
+          <th id="rings" headers="accessories">Rings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="3" id="belgium">Belgium</th>
+          <th id="antwerp" headers="belgium">Antwerp</th>
+          <td headers="belgium antwerp clothes trousers">56</td>
+          <td headers="belgium antwerp clothes skirts">22</td>
+          <td headers="belgium antwerp clothes dresses">43</td>
+          <td headers="belgium antwerp accessories bracelets">72</td>
+          <td headers="belgium antwerp accessories rings">23</td>
+        </tr>
+        <tr>
+          <th id="gent" headers="belgium">Gent</th>
+          <td headers="belgium gent clothes trousers">46</td>
+          <td headers="belgium gent clothes skirts">18</td>
+          <td headers="belgium gent clothes dresses">50</td>
+          <td headers="belgium gent accessories bracelets">61</td>
+          <td headers="belgium gent accessories rings">15</td>
+        </tr>
+        <tr>
+          <th id="brussels" headers="belgium">Brussels</th>
+          <td headers="belgium brussels clothes trousers">51</td>
+          <td headers="belgium brussels clothes skirts">27</td>
+          <td headers="belgium brussels clothes dresses">38</td>
+          <td headers="belgium brussels accessories bracelets">69</td>
+          <td headers="belgium brussels accessories rings">28</td>
+        </tr>
+        <tr>
+          <th rowspan="2" id="netherlands">The Netherlands</th>
+          <th id="amsterdam" headers="netherlands">Amsterdam</th>
+          <td headers="amsterdam netherlands clothes trousers">89</td>
+          <td headers="amsterdam netherlands clothes skirts">34</td>
+          <td headers="amsterdam netherlands clothes dresses">69</td>
+          <td headers="amsterdam netherlands accessories bracelets">85</td>
+          <td headers="amsterdam name accessories rings">38</td>
+        </tr>
+        <tr>
+          <th id="utrehct" headers="netherlands">Utrecht</th>
+          <td headers="utrehct netherlands clothes trousers">80</td>
+          <td headers="utrehct netherlands clothes skirts">12</td>
+          <td headers="utrehct netherlands clothes dresses">43</td>
+          <td headers="utrehct netherlands accessories bracelets">36</td>
+          <td headers="utrehct netherlands accessories rings">19</td>
+        </tr>
+      </tbody>
+    </table>
+    <h1>Zebra Striping Table</h1>
+    <table class="zebra"> 
+        <col>
+        <col>
+        <col>
+        <col>
+        <thead> 
+        <tr> 
+            <th>Last Name</th> 
+            <th>First Name</th> 
+            <th>Email</th> 
+            <th>Due</th> 
+            <th>Web Site</th> 
+        </tr> 
+        </thead> 
+        <tbody> 
+        <tr> 
+            <td>Smith</td> 
+            <td>John</td> 
+            <td>jsmith@gmail.com</td> 
+            <td>$50.00</td> 
+            <td>http://www.jsmith.com</td> 
+        </tr> 
+        <tr> 
+            <td>Bach</td> 
+            <td>Frank</td> 
+            <td>fbach@yahoo.com</td> 
+            <td>$50.00</td> 
+            <td>http://www.frank.com</td> 
+        </tr> 
+        <tr> 
+            <td>Doe</td> 
+            <td>Jason</td> 
+            <td>jdoe@hotmail.com</td> 
+            <td>$100.00</td> 
+            <td>http://www.jdoe.com</td> 
+        </tr> 
+        <tr> 
+            <td>Conway</td> 
+            <td>Tim</td> 
+            <td>tconway@earthlink.net</td> 
+            <td>$50.00</td> 
+            <td>http://www.timconway.com</td> 
+        </tr> 
+        </tbody> 
+        </table> 
+</body>
+</html>
